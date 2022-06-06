@@ -20,6 +20,7 @@ namespace Mood_Analyser
                 Console.WriteLine("Input Contains Happy");
                 return "Happy";
             }
+
         }
 
 
