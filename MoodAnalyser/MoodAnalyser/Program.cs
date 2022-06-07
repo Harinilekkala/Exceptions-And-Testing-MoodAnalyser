@@ -3,5 +3,9 @@
 //checkMood.AnalyseMood("I am in sad mood");
 
 
-Mood_Analyser.MoodAnalyser checkMood = new Mood_Analyser.MoodAnalyser("I am in sad mood");
+//Mood_Analyser.MoodAnalyser checkMood = new Mood_Analyser.MoodAnalyser(" ");
+//string actualResult = checkMood.AnalyseMood();
+//checkMood.AnalyseMood();
+
+Mood_Analyser.MoodAnalyser checkMood = new Mood_Analyser.MoodAnalyser(" ");
 checkMood.AnalyseMood();

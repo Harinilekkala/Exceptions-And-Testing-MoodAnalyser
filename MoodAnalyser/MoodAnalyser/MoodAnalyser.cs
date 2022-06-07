@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 namespace Mood_Analyser
 {
     public class MoodAnalyser
-    
     {
         public string mood;
         public MoodAnalyser(string mood)
@@ -17,25 +16,33 @@ namespace Mood_Analyser
         public string AnalyseMood()
         {
             try
-            { 
-               if (this.mood.Contains("sad"))
-               {
-                Console.WriteLine("Input Contains Sad");
-                return "Sad";
-               }
-            else
             {
-                Console.WriteLine("Input Contains Happy");
-                return "Happy";
+                if (this.mood.Equals(string.Empty))
+                {
+                    throw new MoodAnalyserCustomException(MoodAnalyserCustomException.ExceptionType.EMPTY_MESSAGE, "Mood Shold not be Empty");
+                }
+                else if (this.mood.Contains("sad"))
+                {
+                    Console.WriteLine("Input Contains Sad");
+                    return "Sad";
+                }
+                else
+                {
+                    Console.WriteLine("Input Contains Happy");
+                    return "Happy";
+                }
+            }
+            catch (NullReferenceException)
+            {
+                throw new MoodAnalyserCustomException(MoodAnalyserCustomException.ExceptionType.NULL_MESSAGE, "Mood Should not be null");
             }
         }
-            catch
-            {
-                Console.WriteLine("Null Value Present");
-                return "Happy";
-            }
+
+
+
+
+
+
 
     }
 }
-    }
-
