@@ -16,18 +16,26 @@ namespace Mood_Analyser
         }
         public string AnalyseMood()
         {
-            if (this.mood.Contains("sad"))
-            {
+            try
+            { 
+               if (this.mood.Contains("sad"))
+               {
                 Console.WriteLine("Input Contains Sad");
                 return "Sad";
-            }
+               }
             else
             {
                 Console.WriteLine("Input Contains Happy");
                 return "Happy";
             }
         }
+            catch
+            {
+                Console.WriteLine("Null Value Present");
+                return "Happy";
+            }
 
     }
 }
+    }
 
