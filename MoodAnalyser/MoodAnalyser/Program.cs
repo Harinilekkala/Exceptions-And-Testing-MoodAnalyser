@@ -7,5 +7,5 @@
 //string actualResult = checkMood.AnalyseMood();
 //checkMood.AnalyseMood();
 
-Mood_Analyser.MoodAnalyser checkMood = new Mood_Analyser.MoodAnalyser(" ");
+Mood_Analyser.MoodAnalyser checkMood = new Mood_Analyser.MoodAnalyser( null);
 checkMood.AnalyseMood();

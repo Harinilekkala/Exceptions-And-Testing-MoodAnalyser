@@ -21,10 +21,23 @@ namespace TestMood
         [Test]
         public void GivenMoodNull_CheckMood_ReturnResultAsHappy()
         {
-            Mood_Analyser.MoodAnalyser checkMood = new Mood_Analyser.MoodAnalyser(null);
-            string actualResult = checkMood.AnalyseMood();
-            Assert.AreNotEqual("Sad", actualResult);
+            try
+            {
+
+
+                Mood_Analyser.MoodAnalyser checkMood = new Mood_Analyser.MoodAnalyser(null);
+                string actualResult = checkMood.AnalyseMood();
+                Assert.AreNotEqual("Happy", actualResult);
+
+            }
+
+            catch(Exception ex)
+            {
+                Assert.AreEqual("Mood Should not be null", ex.Message);
+            }
+
         }
+        
 
     }
 }
