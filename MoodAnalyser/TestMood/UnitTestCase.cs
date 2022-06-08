@@ -2,7 +2,7 @@ namespace TestMood
 {
     public class Tests
     {
-        
+
 
         [Test]
         public void GivenMood_CheckMood_ReturnResultAsSad()
@@ -31,7 +31,7 @@ namespace TestMood
 
             }
 
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Assert.AreEqual("Mood Should not be null", ex.Message);
             }
@@ -50,8 +50,17 @@ namespace TestMood
                 Assert.AreEqual("Mood Should not be null", ex.Message);
             }
         }
+        [Test]
+        public void GivenMoodAnalyserClassName_ReturnMoodAnalyserObject()
+        {
 
+            object expected = new Mood_Analyser.MoodAnalyser(null);
+            object actual = Mood_Analyser.MoodAnalyserFactory.CreateMoodAnalyze("Mood_Analyser.MoodAnalyser", "Mood_Analyser.MoodAnalyser");
+            expected.Equals(actual);
+           
+        }
 
-
+        
+        
     }
 }
