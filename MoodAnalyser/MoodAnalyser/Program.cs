@@ -1,11 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
-//Mood_Analyser.MoodAnalyser checkMood = new Mood_Analyser.MoodAnalyser();
-//checkMood.AnalyseMood("I am in sad mood");
 
 
-//Mood_Analyser.MoodAnalyser checkMood = new Mood_Analyser.MoodAnalyser(" ");
-//string actualResult = checkMood.AnalyseMood();
+//Mood_Analyser.MoodAnalyser checkMood = new Mood_Analyser.MoodAnalyser( null);
 //checkMood.AnalyseMood();
 
-Mood_Analyser.MoodAnalyser checkMood = new Mood_Analyser.MoodAnalyser( null);
-checkMood.AnalyseMood();
+Mood_Analyser.MoodAnalyserFactory.CreateMoodAnalyze("Mood_Analyser.MoodAnalyser", "MoodAnalyser");
