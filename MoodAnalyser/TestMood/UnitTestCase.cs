@@ -143,10 +143,18 @@ namespace TestMood
                 string findMood = Mood_Analyser.MoodAnalyserFactory.InvokeMoodAnalyser("happy", "Analyse");
                 Assert.AreEqual(expected, findMood);
             }
-            catch(Exception e )
+            catch(Exception e)
+            
             {
                 Assert.AreEqual("Method Not Found", e.Message);
             }
+        }
+        //TectCase-7.1
+        [Test]
+        public void GivenHappyMoodDynamivRefactorReturnHappy()
+        {
+            string result = Mood_Analyser.MoodAnalyserFactory.SetField("Happy", "mood");
+            Assert.AreEqual("Happy", result);
         }
 
     }
