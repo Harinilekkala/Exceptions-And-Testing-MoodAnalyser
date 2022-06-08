@@ -161,7 +161,8 @@ namespace TestMood
 
 
         }
-
+        //7.2
+        [Test]
         public void GivenHappyMoodAndInvalidFielsThrowException()
         {
             try
@@ -172,6 +173,22 @@ namespace TestMood
             catch (Exception e)
             {
                 Assert.AreEqual("Field Not Found", e.Message);
+            }
+        }
+
+        //7.3
+
+        [Test]
+        public void GivenInvalidMoodThrowException()
+        {
+            try
+            {
+                string result = Mood_Analyser.MoodAnalyserFactory.SetField("null", "mood");
+                Assert.AreEqual("null", result);
+            }
+            catch (Exception e)
+            {
+                Assert.AreEqual("Mood Should not be null", e.Message);
             }
         }
 
