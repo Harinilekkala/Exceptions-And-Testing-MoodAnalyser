@@ -90,7 +90,7 @@ namespace TestMood
                 Assert.AreEqual("Method Not Found", e.Message);
             }
         }
-        
+
         [Test]
         public void GivenPerameteConstructorReturnMoodAnalyserObject()
         {
@@ -133,7 +133,7 @@ namespace TestMood
             string findMood = Mood_Analyser.MoodAnalyserFactory.InvokeMoodAnalyser("happy", "AnalyseMood");
             Assert.AreEqual(expected, findMood);
         }
-        
+
         [Test]
         public void GivenHappyinInvalidMood_ThrowException()
         {
@@ -143,8 +143,8 @@ namespace TestMood
                 string findMood = Mood_Analyser.MoodAnalyserFactory.InvokeMoodAnalyser("happy", "Analyse");
                 Assert.AreEqual(expected, findMood);
             }
-            catch(Exception e)
-            
+            catch (Exception e)
+
             {
                 Assert.AreEqual("Method Not Found", e.Message);
             }
@@ -152,10 +152,31 @@ namespace TestMood
         //TectCase-7.1
         [Test]
         public void GivenHappyMoodDynamivRefactorReturnHappy()
+
         {
-            string result = Mood_Analyser.MoodAnalyserFactory.SetField("Happy", "mood");
-            Assert.AreEqual("Happy", result);
+            {
+                string result = Mood_Analyser.MoodAnalyserFactory.SetField("Happy", "mood");
+                Assert.AreEqual("Happy", result);
+            }
+
+
         }
+
+        public void GivenHappyMoodAndInvalidFielsThrowException()
+        {
+            try
+            {
+                string result = Mood_Analyser.MoodAnalyserFactory.SetField("Happy", "testMood");
+                Assert.AreEqual("Happy", result);
+            }
+            catch (Exception e)
+            {
+                Assert.AreEqual("Field Not Found", e.Message);
+            }
+        }
+
+
+
 
     }
 }
