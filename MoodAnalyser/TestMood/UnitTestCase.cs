@@ -112,6 +112,20 @@ namespace TestMood
                 Assert.AreEqual("Class Not Found", e.Message);
             }
         }
+        [Test]
+        public void GivenInvalidPerameterizedConstructor_ReturnNoSuchConstructor()
+        {
+            try
+            {
+                object expected = new Mood_Analyser.MoodAnalyser("I am in sad mood");
+                object actual = Mood_Analyser.MoodAnalyserFactory.CreateMoodAnalyzeWithParamaterConstructor("Mood_Analyser.MoodAnalyser", "Mood", "I am in sad mood");
+                expected.Equals(actual);
+            }
+            catch (Exception e)
+            {
+                Assert.AreEqual("Constructor Not Found", e.Message);
+            }
+        }
     }
 }
 
